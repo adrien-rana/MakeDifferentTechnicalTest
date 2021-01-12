@@ -27,6 +27,16 @@
     <ion-icon name="add" slot="start"></ion-icon>
     Ajouter une tâche
   </ion-button>
+
+  <ion-button *ngIf="!updateTask" (click)="showForm()" expand="block" class="update-button">
+    <ion-icon name="update" slot="start"></ion-icon>
+    Modifier une tâche
+  </ion-button>
+
+  <ion-button *ngIf="!deleteTask" (click)="showForm()" expand="block" class="delete-button">
+    <ion-icon name="delete" slot="start"></ion-icon>
+    Supprimer une tâche
+  </ion-button>
   
   <ion-button *ngIf="addTask" (click)="showForm()" expand="block" class="add-button">
     <ion-icon name="close" slot="start"></ion-icon>
