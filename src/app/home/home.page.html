@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Liste
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">liste</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-body>
+    <ion-card *ngIf="!addTask">
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="myTask" placeholder="Entrer une tache"></ion-input>
+      <ion-button (click)="addTaskToFirebase()" shape="round" slot="end">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-button *ngIf="!addTask" (click)="showForm()" expand="block" class="add-button">
+    <ion-icon name="add" slot="start"></ion-icon>
+    Ajouter une tâche
+  </ion-button>
+  
+  <ion-button *ngIf="addTask" (click)="showForm()" expand="block" class="add-button">
+    <ion-icon name="close" slot="start"></ion-icon>
+    Annuler
+  </ion-button>
+  </ion-body>
+
+</ion-content>
